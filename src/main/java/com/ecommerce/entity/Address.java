@@ -9,18 +9,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Address {
+public class Address extends BaseEntity {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    private String name;
 
-        private String name;
+    private String street;
 
-        private String street;
+    private String zipCode;
 
-        private String zipCode;
-
-        @ManyToOne
-        private Customer customer;
+    @ManyToOne
+    private Customer customer;
 }
